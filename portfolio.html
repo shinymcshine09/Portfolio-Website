@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Portfolio Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link id="bootstrap-light" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link id="bootstrap-dark" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-night.min.css" rel="stylesheet" crossorigin="anonymous" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="assets/style.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+        </style>
+    </head>
+    <body>
+        <button id="hamburger">
+            <svg id="svg-hamburger" width="40px" height="40px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z"/>
+            </svg>
+        </button>
+        <section>
+            <nav id="navbar" class="hide">
+                <button id="cross">
+                    <svg fill="#000000" width="40px" height="40px" viewBox="0 0 24 24" data-name="Line Color" xmlns="http://www.w3.org/2000/svg" class="icon line-color">
+                        <line id="primary" x1="19" y1="19" x2="5" y2="5" style="fill: none; stroke: black; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></line>
+                        <line id="primary-2" data-name="primary" x1="19" y1="5" x2="5" y2="19" style="fill: none; stroke: black; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></line>
+                    </svg>
+                </button>
+                <ul class="nav nav-underline flex-column justify-content-center align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link mb-4 fs-5 text-black" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active mb-4 fs-5 text-black" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mb-4 fs-5 text-black" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mb-4 fs-5 text-black" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        <section id="portfolio-main">
+            <div>
+                <h2 class="m-5 text-center">
+                    Portfolio
+                </h2>
+            </div>
+            <section class="shadow container project border rounded p-5 bg-light mb-5">
+                <h3 class="text-center mb-3 pb-3 border-bottom">
+                    My Current Portfolio Website
+                </h3>
+                <div>
+                    <p class="lead">
+                        My Portfolio Website is a personal project showcasing skills in front-end web development and design.
+                    </p>
+                    <p>
+                        Crafted using HTML, CSS, and JavaScript, with Bootstrap for responsive layouts and a touch of Google Fonts for typography, this website serves as a digital portfolio.
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <img class="w-100" id="website" src="assets/images/current-website.png" alt="website-img">
+                    </div>
+                    <p>
+                        Project Overview:
+                    </p>
+                    <ul class="list-styled">
+                        <li>
+                            HTML/CSS/JavaScript:
+                            <ul>
+                                <li>
+                                    HTML: Structured to ensure accessibility and semantic correctness.
+                                </li>
+                                <li>
+                                    CSS: Custom styles tailored for a clean, modern aesthetic.
+                                </li>
+                                <li>
+                                    JavaScript: Used to enhance interactivity, such as implementing a responsive navigation menu and handling form submissions.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Bootstrap Integration:
+                            <ul>
+                                <li>
+                                    Utilizes Bootstrap's CSS framework for responsive design, ensuring optimal viewing across devices.
+                                </li>
+                                <li>
+                                    Implements Bootstrap's utility classes for spacing, alignment, and shadow effects to enhance visual appeal.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Customization and Styling:
+                            <ul>
+                                <li>
+                                    Custom sprites and background videos add visual interest and engagement.
+                                </li>
+                                <li>
+                                    Dark mode support enhances user experience and accessibility preferences.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Design Philosophy:
+                            <ul>
+                                <li>
+                                    Modern Aesthetic: Focuses on creating visually appealing and user-friendly interfaces.
+                                </li>
+                                <li>
+                                    User-Centric: Prioritizes readability and navigation ease, enhancing overall user experience.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>
+                        This project not only demonstrates technical proficiency in web development but also reflects a commitment to creating engaging digital experiences.
+                    </p>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a href="https://github.com/shinymcshine09/SnakeGame" type="button" class="btn btn-primary ml-auto">Link to Code</a>
+                </div>
+            </section>
+            <section class="container shadow project border rounded p-5 bg-light mb-5">
+                <h3 class="text-center mb-3 pb-3 border-bottom">
+                    SnakeGame Project
+                </h3>
+                    <div class="align-items-center">
+                        <p class="lead">
+                            This SnakeGame project is a Java-based remake of Nokia's classic Snake game.
+                        </p>
+                        <p>
+                            Developed as a personal project, it was a great opportunity to practice and enhance my coding skills while working on something fun and nostalgic.
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <img class="w-100" src="assets/images/snake_ingame.png" alt="snake">
+                        </div>
+                        <p>Project Highlights:</p>
+                        <ul class="mb-3">
+                            <li>
+                                Language: Java
+                            </li>
+                            <li>
+                                Custom Sprites: The game retains the general rules and gameplay of the original Snake game but features custom-designed sprites for a unique visual experience.
+                            </li>
+                            <li>
+                                Objective: Guide the snake to eat food, growing longer with each piece consumed, while avoiding collisions with the walls and the snake's own body.
+                            </li>
+                        </ul>
+                        <p>
+                            This project was not only enjoyable to create but also a valuable learning experience, solidifying my understanding of Java and game development principles.
+                        </p>
+                    </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <a href="https://github.com/shinymcshine09/SnakeGame" type="button" class="btn btn-primary me-2">Link to Code</a>
+                    <a href="java-snake.html" type="button" class="btn btn-primary">Play the Game</a>
+                </div>
+            </section>
+            <section class="shadow project border rounded p-5 bg-light container mb-5">
+                <h3 class="text-center mb-3 pb-3 border-bottom">
+                    Currency Converter Project
+                </h3>
+                <div>
+                    <p class="lead">
+                        This Currency Converter project is a Python-based application designed to convert values between different currencies.
+                    </p>
+                    <p>
+                        Developed as a personal project, it was an excellent way to practice coding and understand financial calculations and exchange rates.
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <img class="w-100 currency-img mx-auto" src="assets/images/converter_screenshot.png" alt="Currency Screenshot">
+                    </div>
+                    <p>
+                        Project Highlights:
+                    </p>
+                    <ul class="mb-3">
+                        <li>
+                            Language: Python
+                        </li>
+                        <li>
+                            Functionality: The application allows users to input an amount in one currency and convert it to another using up-to-date exchange rates.
+                        </li>
+                        <li>
+                            User Interface: Features a simple and intuitive GUI for easy interaction and smooth user experience, built using Tkinter.
+                        </li>
+                        <li>
+                            Real-time Exchange Rates: Integrates with an API to fetch current exchange rates, ensuring accurate and reliable conversions.
+                        </li>
+                    </ul>
+                    <p>
+                        Creating this project was a rewarding experience, allowing me to apply my Python skills to a practical tool that can be useful in real-world scenarios.
+                    </p>
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <a href="https://github.com/shinymcshine09/Currency-Converter" type="button" class="btn btn-primary">Link to Code</a>
+                    <a href="currency_converter.html" type="button" class="btn btn-primary ms-2">Try the Program</a>
+                </div>
+            </section>
+            <section class="container project shadow border rounded p-5 bg-light">
+                <h3 class="text-center mb-3 pb-3 border-bottom">
+                    Personal React Website Project
+                </h3>
+                <div>
+                    <div>
+                        <p class="lead">
+                            This Personal Website project is a custom-built website designed to showcase my skills, projects, and experience.
+                        </p>
+                        <p>
+                            Developed from scratch, this project demonstrates my skills in web development and design.
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <img class="w-100" id="website" src="assets/images/react_website.png" alt="website-img">
+                        </div>
+                        <p>
+                            Project Highlights:
+                        </p>
+                        <ul>
+                            <li>
+                                Technologies Used:
+                                <ul>
+                                    <li>
+                                        HTML/CSS: For structuring and styling the website.
+                                    </li>
+                                    <li>
+                                        JavaScript: For adding interactivity and enhancing the user experience.
+                                    </li>
+                                    <li>
+                                        React: For building reusable UI components and managing the website's dynamic behavior.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Features:
+                                <ul>
+                                    <li>
+                                        About Me: A detailed section introducing myself and my background.
+                                    </li>
+                                    <li>
+                                        Projects: A portfolio of my projects, including descriptions and links to GitHub repositories.
+                                    </li>
+                                    <li>
+                                        Contact Form: A functional form allowing visitors to get in touch with me directly through the website.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Design: Clean and modern design focused on user experience and readability.
+                            </li>
+                        </ul>
+                        <p>
+                            Developing this website was an exciting and educational experience, allowing me to integrate various web technologies and create a platform to present my work and connect with others.
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a href="https://github.com/shinymcshine09/my-website" type="button" class="btn btn-primary">Link to Code</a>
+                    <a href="old_website.html" type="button" class="btn btn-primary ms-2">About Old Site</a>
+                </div>
+            </section>
+        </section>
+        <footer class="bg-light py-4 w-100 border-top m-0">
+            <div id="footer-container" class="container mx-auto">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h5>Contact</h5>
+                        <ul class="list-unstyled">
+                            <li>Email: <a href="mailto:js.hart@hotmail.com">js.hart@hotmail.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <h5>Sitemap</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+                                  </svg>
+                                <a href="home.html">Home</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-code-fill" viewBox="0 0 16 16">
+                                    <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M6.646 5.646a.5.5 0 1 1 .708.708L5.707 8l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708zm2.708 0 2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 8 8.646 6.354a.5.5 0 1 1 .708-.708"/>
+                                  </svg>
+                                <a href="portfolio.html">Portfolio</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                  </svg>
+                                <a href="about.html">About</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+                                  </svg>
+                                <a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <h5>Follow Me</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                                </svg>
+                                <a href="https://www.linkedin.com/in/james-h-644b0b1bb" >Linkedin</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <p>&copy; 2024 James Hart. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="assets/js/script.js" async defer></script>
+    </body>
+</html>

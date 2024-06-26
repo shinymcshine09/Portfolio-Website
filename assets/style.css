@@ -1,0 +1,181 @@
+/* Global styles. */
+body {
+    font-family: "Merriweather", serif;
+}
+
+.btn-primary {
+    border-radius: 1.5rem;
+}
+
+/* Navigation bar styles. */
+#hamburger {
+    position: fixed;
+    border-style: none;
+    right: .5rem;
+    top: .5rem;
+    z-index: 99;
+    background-color: transparent;
+    animation: fade-in-animation 2s linear;
+}
+
+#svg-hamburger {
+    fill: white;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    padding-left: 5rem; 
+    padding-right: 5rem;
+    background-color: rgba(211, 211, 211, .7);
+    z-index: 999;
+    display: flex;
+    animation: slide-in-right .3s linear forwards;
+}
+
+#cross {
+    position: absolute;
+    top: .3em;
+    right: .3em;
+    border-style: none;
+    background-color: rgba(211, 211, 211, .1);
+}
+
+.hide {
+    display: none;
+}
+
+/* Homepage values. */
+#homepage-main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    animation: fade-in-animation 2s linear;
+}
+
+#bg-video-container {
+    width: 100%;
+    z-index: -1;
+}
+
+#bg-video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#sub-titles {
+    box-sizing: border-box;
+    font-family: "Roboto Serif", serif;
+}
+
+#sub-titles p, #sub-titles h5, #sub-titles u, #sub-titles h2 {
+    min-width: min-content;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline;
+    text-overflow: ellipsis;
+}
+
+#sub-titles h2, #sub-titles h5, #sub-titles u, #sub-titles {
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+#title-sub-text {
+    max-width: 400px;
+}
+
+/* About page values. */
+#about-main {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fade-in-animation 2s linear;
+    margin-bottom: 10rem;
+}
+
+#about-main p {
+    line-height: 2rem;
+}
+
+#about-main li {
+    line-height: 2rem;
+}
+
+/* Portfolio page styles. */
+#portfolio-main {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10rem;
+    animation: fade-in-animation 2s linear;
+}
+
+#portfolio-main h1 {
+    padding-top: 10rem;
+    padding-bottom: 3rem;
+}
+
+.currency-img {
+    max-width: 400px;
+}
+
+/* Contact page styles. */
+#contact-main, #main-old-website {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fade-in-animation 2s linear;
+    margin-bottom: 10rem;
+}
+
+/* Footer values. */
+footer {
+    font-size: 14px;
+    animation: fade-in-animation 2s linear;
+}
+
+#footer-container {
+    max-width: 768px;
+}
+
+/* Dark mode styles. */
+@media (prefers-color-scheme: dark) {
+    .active {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .nav-item:hover {
+        text-decoration: underline;
+        color: black;
+    }
+}
+
+/* Transition values. */
+@keyframes slide-in-right {
+    0%  {right: -300px;}
+    100% {right: 0px;}
+}
+
+@keyframes slide-out-right {
+    0%  {right: 0px;}
+    100% {right: -100px;}
+}
+
+@keyframes fade-in-animation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
