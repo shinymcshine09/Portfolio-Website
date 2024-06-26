@@ -39,7 +39,7 @@ function setThemeBasedOnPreference() {
     } else {
         lightTheme.disabled = false;
         darkTheme.disabled = true;
-        if (window.scrollY > scrollPoint || page !== 'home.html') {
+        if (window.scrollY > scrollPoint || page !== 'index.html') {
             svg.querySelector('path').setAttribute('fill', 'black');
         }
     }
@@ -55,7 +55,7 @@ window.addEventListener('scroll', function() {
     if (window.scrollY > scrollPoint && (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)) {
         svg.querySelector('path').setAttribute('fill', 'black');
     }
-    else if (window.scrollY < scrollPoint && (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) &&  page !== 'home.html' ) {
+    else if (window.scrollY < scrollPoint && (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) &&  page !== 'index.html' ) {
         svg.querySelector('path').setAttribute('fill', 'black');
     } 
     else {
