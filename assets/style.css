@@ -1,6 +1,6 @@
 /* Global styles. */
 body {
-    font-family: "Merriweather", serif;
+    font-family: "Nunito", sans-serif;
 }
 
 .btn-primary {
@@ -71,9 +71,12 @@ nav {
     z-index: -1;
 }
 
+#home-titles {
+    font-family: "Open Sans", sans-serif;
+}
+
 #sub-titles {
     box-sizing: border-box;
-    font-family: "Roboto Serif", serif;
 }
 
 #sub-titles p, #sub-titles h5, #sub-titles u, #sub-titles h2 {

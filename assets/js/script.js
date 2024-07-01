@@ -1,4 +1,3 @@
-
 const navBtn = document.querySelector('#hamburger');
 const nav = document.querySelector('#navbar');
 const crossBtn = document.querySelector('#cross');
