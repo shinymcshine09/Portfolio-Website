@@ -18,22 +18,21 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     </head>
     <body>
-        <button id="hamburger">
-            <svg id="svg-hamburger" width="40px" height="40px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z"/>
-            </svg>
-        </button>
-        <section>
+        <header>
+            <button class="btn" id="hamburger">
+                <svg xmlns="http://www.w3.org/2000/svg" id="svg-hamburger" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                </svg>
+            </button>
             <nav id="navbar" class="hide">
-                <button id="cross">
-                    <svg fill="#000000" width="40px" height="40px" viewBox="0 0 24 24" data-name="Line Color" xmlns="http://www.w3.org/2000/svg" class="icon line-color">
-                        <line id="primary" x1="19" y1="19" x2="5" y2="5" style="fill: none; stroke: black; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></line>
-                        <line id="primary-2" data-name="primary" x1="19" y1="5" x2="5" y2="19" style="fill: none; stroke: black; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></line>
-                    </svg>
+                <button id="cross" class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                      </svg>
                 </button>
                 <ul class="nav nav-underline flex-column justify-content-center align-items-center">
                     <li class="nav-item">
-                        <a class="link-offset-2 nav-link active mb-4 fs-5 text-black" aria-current="page" href="index.html">Home</a>
+                        <a class="link-offset-2 nav-link active mb-4 fs-5 text-black" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mb-4 fs-5 text-black" href="portfolio.html">Portfolio</a>
@@ -46,25 +45,23 @@
                     </li>
                 </ul>
             </nav>
-        </section>
+        </header>
+        <div id="overlay" class="hidden"></div>
         <main>
-            <section id="homepage-main">
-                <video id="bg-video" autoplay muted loop>
-                    <source src="assets/images/Website_background.mp4" type="video/mp4">
-                </video>
+            <section id="homepage-main" class="d-flex align-items-center justify-content-center">
                 <div id="home-titles" class="m-3">
-                    <h1 class="display-1 text-light fw-bold">Hi, I'm James.</h1>
+                    <h1 class="display-1 fw-bold">Hi, I'm James.</h1>
                     <div id="sub-titles" class="mb-3">
-                        <p class="h6 fst-italic text-light">An Aspiring&nbsp;</p>
+                        <p class="h6 fst-italic">An Aspiring&nbsp;</p>
                         <p class="h3 fw-bold text-warning">WEB DEVELOPER&nbsp;</p>
-                        <p class="h6 fst-italic text-light">and&nbsp;</p>
+                        <p class="h6 fst-italic">and&nbsp;</p>
                         <p class="h3 fw-bold text-warning">PROGRAMMER</p>
                     </div>
-                    <div class="text-center mb-3">
-                        <h5 class="fw-bold text-light display-3">Welcome to my website.</h5>
+                    <div class="mb-3">
+                        <h5 class="fw-bold display-5">Welcome to my website.</h5>
                     </div>
-                    <blockquote id="title-sub-text" class="ms-auto mt-5 blockquote">
-                        <q class="text-light fs-5 h2">
+                    <blockquote id="title-sub-text" class="mt-5 blockquote">
+                        <q class="fs-5 display-6">
                             I create modern accessible websites that 
                             <span class="text-warning fw-bold h2 fs-5">standout </span>
                             to the user.
@@ -72,302 +69,405 @@
                     </blockquote>
                 </div>
             </section>
-            <section id="about-main">
-                <h2 class="text-center m-5">
-                    About me
-                </h2>
-                <div class="border shadow bg-light rounded p-5 container">
-                    <h3 class="text-center mt-5 mb-4 pb-3 border-bottom">James Stephen Hart</h3>
-                    <h4 class="text-center mb-5">BA, DipHE</h4>
-                    <p class="lead">
-                        Hi! My name is James. I am an English graduate who has just completed
-                        a foundation degree in Computing and IT with a focus in Computer
-                        Science. 
-                    </p>
-                    <p>    
-                        I really enjoyed the coding aspects of my studies and 
-                        learning how computers function. As I have just finished, I am intending to take a year or 
-                        two out of studying and get a job in the IT industry, preferably web development. Then, if I 
-                        feel able to, I will return to top-up my Diploma of Higher Education into a Bachelor of Science 
-                        whilst also working.
-                    </p>
-                    <p>
-                        My current developer skills include:
-                    </p>
-                    <ul>
-                        <li><span class="fw-bold">Web development languages:</span> HTML, CSS, and JavaScript</li>
-                        <li><span class="fw-bold">Building websites using:</span> React and Node.js</li>
-                        <li><span class="fw-bold">Setting up databases with:</span> PHP and SQL in MySQL and MongoDB</li>
-                        <li><span class="fw-bold">Creating programs in:</span> Python and Java</li>
-                    </ul>
-                    <p>
-                        My ultimate goal is to become a full-stack web developer as I am passionate about creating intuitive 
-                        and efficient web applications that solve real-world problems. In the next few years, I aim to gain 
-                        hands-on experience in the industry, working on diverse projects that challenge my skills and expand 
-                        my knowledge.
-                    </p>
-                    <p class="border-bottom pb-3 mb-4">
-                        Additionally, I am interested in exploring other career paths within IT, such as programming and software 
-                        engineering, as I also find these fields fascinating and align with my interests in coding. I could see 
-                        myself possibly transitioning into Software Engineering over time.
-                    </p>
-                    <div class="d-flex justify-content-end">
-                        <a class="btn btn-primary" href="assets/general_cv.pdf">
+            <section id="about-main" class="container">
+                <div class="card shadow mb-4">
+                    <div class="card-header">
+                        About Me
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text lead">
+                            Hi! My name is James. I am an English graduate who has just completed
+                            a foundation degree in Computing and IT with a focus in Computer
+                            Science. 
+                        </p>
+                        <p class="card-text">    
+                            I really enjoyed the coding aspects of my studies and 
+                            learning how computers function. As I have just finished, I am intending to take a year or 
+                            two out of studying and get a job in the IT industry, preferably web development. Then, if I 
+                            feel able to and still wish to, I will return to top-up my Diploma of Higher Education into a Bachelor of Science 
+                            whilst still working.
+                        </p>
+                        <p class="card-text">
+                            My current developer skills include:
+                        </p>
+                        <ul>
+                            <li><span class="fw-bold">Web development languages:</span> HTML, CSS, and JavaScript</li>
+                            <li><span class="fw-bold">Building websites using:</span> React and Node.js</li>
+                            <li><span class="fw-bold">Setting up databases with:</span> PHP and SQL in MySQL and MongoDB</li>
+                            <li><span class="fw-bold">Creating programs in:</span> Python and Java</li>
+                        </ul>
+                        <p class="card-text">
+                            My ultimate goal is to become a full-stack web developer as I am passionate about creating intuitive 
+                            and efficient web applications that solve real-world problems. In the next few years, I aim to gain 
+                            hands-on experience in the industry, working on diverse projects that challenge my skills and expand 
+                            my knowledge.
+                        </p>
+                        <p class="card-text">
+                            Additionally, I am interested in exploring other career paths within IT, such as programming and software 
+                            engineering, as I also find these fields fascinating and align with my interests in coding. I could see 
+                            myself possibly transitioning into Software Engineering over time.
+                        </p>                    
+                    </div>
+                    <div class="card-body border-top">
+                        <a class="card-link btn btn-warning" href="https://github.com/shinymcshine09">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                            </svg>
+                            GitHub
+                        </a>
+                        <a class="card-link btn btn-warning" href="https://www.linkedin.com/in/james-h-644b0b1bb">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a class="card-link btn btn-warning" href="assets/general_cv.pdf">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-pdf-fill" viewBox="0 0 16 16">
+                                <path d="M5.523 12.424q.21-.124.459-.238a8 8 0 0 1-.45.606c-.28.337-.498.516-.635.572l-.035.012a.3.3 0 0 1-.026-.044c-.056-.11-.054-.216.04-.36.106-.165.319-.354.647-.548m2.455-1.647q-.178.037-.356.078a21 21 0 0 0 .5-1.05 12 12 0 0 0 .51.858q-.326.048-.654.114m2.525.939a4 4 0 0 1-.435-.41q.344.007.612.054c.317.057.466.147.518.209a.1.1 0 0 1 .026.064.44.44 0 0 1-.06.2.3.3 0 0 1-.094.124.1.1 0 0 1-.069.015c-.09-.003-.258-.066-.498-.256M8.278 6.97c-.04.244-.108.524-.2.829a5 5 0 0 1-.089-.346c-.076-.353-.087-.63-.046-.822.038-.177.11-.248.196-.283a.5.5 0 0 1 .145-.04c.013.03.028.092.032.198q.008.183-.038.465z"/>
+                                <path fill-rule="evenodd" d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2zM4.165 13.668c.09.18.23.343.438.419.207.075.412.04.58-.03.318-.13.635-.436.926-.786.333-.401.683-.927 1.021-1.51a11.7 11.7 0 0 1 1.997-.406c.3.383.61.713.91.95.28.22.603.403.934.417a.86.86 0 0 0 .51-.138c.155-.101.27-.247.354-.416.09-.181.145-.37.138-.563a.84.84 0 0 0-.2-.518c-.226-.27-.596-.4-.96-.465a5.8 5.8 0 0 0-1.335-.05 11 11 0 0 1-.98-1.686c.25-.66.437-1.284.52-1.794.036-.218.055-.426.048-.614a1.24 1.24 0 0 0-.127-.538.7.7 0 0 0-.477-.365c-.202-.043-.41 0-.601.077-.377.15-.576.47-.651.823-.073.34-.04.736.046 1.136.088.406.238.848.43 1.295a20 20 0 0 1-1.062 2.227 7.7 7.7 0 0 0-1.482.645c-.37.22-.699.48-.897.787-.21.326-.275.714-.08 1.103"/>
+                              </svg>
                             My Resume
+                        </a>
                         </a>
                     </div>
                 </div>
             </section>
-            <section id="portfolio-main">
-                <div>
-                    <h2 class="m-5 text-center">
-                        Portfolio
-                    </h2>
-                </div>
-                <section class="shadow container project border rounded p-5 bg-light mb-5">
-                    <h3 class="text-center mb-3 pb-3 border-bottom">
-                        My Current Portfolio Website
-                    </h3>
-                    <div class="border-bottom mb-4">
-                        <p class="lead">
-                            My Portfolio Website is a personal project showcasing skills in front-end web development and design.
-                        </p>
-                        <p>
-                            Crafted using HTML, CSS, and JavaScript, with Bootstrap for responsive layouts and a touch of Google Fonts for typography, this website serves as a digital portfolio.
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <img class="w-100" id="website" src="assets/images/current-website.webp" alt="website-img">
-                        </div>
-                        <p>
-                            Project Overview:
-                        </p>
-                        <ul class="list-styled">
-                            <li>
-                                HTML/CSS/JavaScript:
-                                <ul>
-                                    <li>
-                                        HTML: Structured to ensure accessibility and semantic correctness.
-                                    </li>
-                                    <li>
-                                        CSS: Custom styles tailored for a clean, modern aesthetic.
-                                    </li>
-                                    <li>
-                                        JavaScript: Used to enhance interactivity, such as implementing a responsive navigation menu and handling form submissions.
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                Bootstrap Integration:
-                                <ul>
-                                    <li>
-                                        Utilizes Bootstrap's CSS framework for responsive design, ensuring optimal viewing across devices.
-                                    </li>
-                                    <li>
-                                        Implements Bootstrap's utility classes for spacing, alignment, and shadow effects to enhance visual appeal.
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                Customization and Styling:
-                                <ul>
-                                    <li>
-                                        Custom sprites and background videos add visual interest and engagement.
-                                    </li>
-                                    <li>
-                                        Dark mode support enhances user experience and accessibility preferences.
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                Design Philosophy:
-                                <ul>
-                                    <li>
-                                        Modern Aesthetic: Focuses on creating visually appealing and user-friendly interfaces.
-                                    </li>
-                                    <li>
-                                        User-Centric: Prioritizes readability and navigation ease, enhancing overall user experience.
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <p>
-                            This project not only demonstrates technical proficiency in web development but also reflects a commitment to creating engaging digital experiences.
-                        </p>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                        <a href="https://github.com/shinymcshine09/SnakeGame" type="button" class="btn btn-primary ml-auto">Link to Code</a>
-                    </div>
-                </section>
-                <section class="container shadow project border rounded p-5 bg-light mb-5">
-                    <h3 class="text-center mb-3 pb-3 border-bottom">
-                        SnakeGame Project
-                    </h3>
-                        <div class="align-items-center border-bottom mb-4">
-                            <p class="lead">
-                                This SnakeGame project is a Java-based remake of Nokia's classic Snake game.
-                            </p>
-                            <p>
-                                Developed as a personal project, it was a great opportunity to practice and enhance my coding skills while working on something fun and nostalgic.
-                            </p>
-                            <div class="d-flex align-items-center">
-                                <img class="w-100" src="assets/images/snake_ingame.webp" alt="snake">
+            <div id="portfolio-main" class="container">
+                <h2 class="m-5 text-center fw-bold">
+                    My Portfolio
+                </h2>
+                <div class="row">
+                    <div class="col-sm-6 mb-4">
+                        <div class="card shadow mb-4">
+                            <div class="card-header">
+                                Featured
                             </div>
-                            <p>Project Highlights:</p>
-                            <ul class="mb-3">
+                            <img class="card-img-top" src="assets/images/current-website.webp" alt="Card image cap">
+                            <div class="card-body">
+                              <h5 class="card-title">Portfolio Website</h5>
+                              <p class="card-text">My Portfolio Website is a personal project showcasing skills in front-end web development and design.</p>
+                            </div>
+                            <div class="card-body border-top">
+                                <button data-target="website-info" class="card-link btn btn-warning show-btn">
+                                    Details
+                                </button>
+                                <a href="https://github.com/shinymcshine09/Portfolio-Website" class="card-link btn btn-warning">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                                    </svg>
+                                    Code Link
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card shadow">
+                            <div class="card-header">
+                                Python
+                            </div>
+                            <img class="card-img-top" src="assets/images/converter_screenshot.webp" alt="Card image cap">
+                            <div class="card-body">
+                              <h5 class="card-title">Currency Converter</h5>
+                              <p class="card-text">This Currency Converter project is a Python-based application designed to convert values between different currencies.</p>
+                            </div>
+                            <div class="card-body border-top">
+                                <button data-target="converter-info" class="card-link btn btn-warning show-btn">Details</button>
+                                <a href="https://github.com/shinymcshine09/Currency-Converter" class="card-link btn btn-warning">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                                    </svg>
+                                    Code Link
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card shadow mb-4">
+                            <div class="card-header">
+                                Java
+                            </div>
+                            <img class="card-img-top" src="assets/images/snake_ingame.webp" alt="Card image cap">
+                            <div class="card-body">
+                              <h5 class="card-title">SnakeGame</h5>
+                              <p class="card-text">This SnakeGame project is a Java-based remake of Nokia's classic Snake game.</p>
+                            </div>
+                            <div class="card-body border-top">
+                                <button data-target="snake-info" class="card-link btn btn-warning show-btn">
+                                    Details
+                                </button>
+                                <a href="https://github.com/shinymcshine09/SnakeGame" class="card-link btn btn-warning">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                                    </svg>
+                                    Code Link
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card shadow">
+                            <div class="card-header">
+                                JavaScript/React
+                            </div>
+                            <img class="card-img-top" src="assets/images/react_website.webp" alt="Card image cap">
+                            <div class="card-body">
+                              <h5 class="card-title">React Website</h5>
+                              <p class="card-text">This Personal Website project is a custom-built website designed to showcase my skills, projects, and experience.</p>
+                            </div>
+                            <div class="card-body border-top">
+                                <button data-target="react-info" class="card-link btn btn-warning show-btn">
+                                    Details
+                                </button>
+                                <a href="https://github.com/shinymcshine09/my-website" class="card-link btn btn-warning">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                                    </svg>
+                                    Code Link
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section id="website-info" class="shadow container project border rounded p-5 bg-light mb-5 hidden modal">
+                <h3 class="text-center mb-3 pb-3 border-bottom">
+                    My Current Portfolio Website
+                </h3>
+                <div class="border-bottom mb-4">
+                    <p class="lead">
+                        My Portfolio Website is a personal project showcasing skills in front-end web development and design.
+                    </p>
+                    <p>
+                        Crafted using HTML, CSS, and JavaScript, with Bootstrap for responsive layouts and a touch of Google Fonts for typography, this website serves as a digital portfolio.
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <img class="w-100" id="website" src="assets/images/current-website.webp" alt="website-img">
+                    </div>
+                    <p>
+                        Project Overview:
+                    </p>
+                    <ul class="list-styled">
+                        <li>
+                            HTML/CSS/JavaScript:
+                            <ul>
                                 <li>
-                                    Language: Java
+                                    HTML: Structured to ensure accessibility and semantic correctness.
                                 </li>
                                 <li>
-                                    Custom Sprites: The game retains the general rules and gameplay of the original Snake game but features custom-designed sprites for a unique visual experience.
+                                    CSS: Custom styles tailored for a clean, modern aesthetic.
                                 </li>
                                 <li>
-                                    Objective: Guide the snake to eat food, growing longer with each piece consumed, while avoiding collisions with the walls and the snake's own body.
+                                    JavaScript: Used to enhance interactivity, such as implementing a responsive navigation menu and handling form submissions.
                                 </li>
                             </ul>
-                            <p>
-                                This project was not only enjoyable to create but also a valuable learning experience, solidifying my understanding of Java and game development principles.
-                            </p>
-                        </div>
-                    <div class="d-flex justify-content-end mt-3">
-                        <a href="https://github.com/shinymcshine09/SnakeGame" type="button" class="btn btn-primary me-2">Link to Code</a>
-                    </div>
-                </section>
-                <section class="shadow project border rounded p-5 bg-light container mb-5">
-                    <h3 class="text-center mb-3 pb-3 border-bottom">
-                        Currency Converter Project
-                    </h3>
-                    <div class="border-bottom mb-4">
+                        </li>
+                        <li>
+                            Bootstrap Integration:
+                            <ul>
+                                <li>
+                                    Utilizes Bootstrap's CSS framework for responsive design, ensuring optimal viewing across devices.
+                                </li>
+                                <li>
+                                    Implements Bootstrap's utility classes for spacing, alignment, and shadow effects to enhance visual appeal.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Customization and Styling:
+                            <ul>
+                                <li>
+                                    Custom sprites and background videos add visual interest and engagement.
+                                </li>
+                                <li>
+                                    Dark mode support enhances user experience and accessibility preferences.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Design Philosophy:
+                            <ul>
+                                <li>
+                                    Modern Aesthetic: Focuses on creating visually appealing and user-friendly interfaces.
+                                </li>
+                                <li>
+                                    User-Centric: Prioritizes readability and navigation ease, enhancing overall user experience.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>
+                        This project not only demonstrates technical proficiency in web development but also reflects a commitment to creating engaging digital experiences.
+                    </p>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a href="https://github.com/shinymcshine09/Portfolio-Website" type="button" class="btn btn-warning ml-auto">Link to Code</a>
+                </div>
+            </section>
+            <section id="snake-info" class="container shadow project border rounded p-5 bg-light mb-5 hidden modal">
+                <h3 class="text-center mb-3 pb-3 border-bottom">
+                    SnakeGame Project
+                </h3>
+                    <div class="align-items-center border-bottom mb-4">
                         <p class="lead">
-                            This Currency Converter project is a Python-based application designed to convert values between different currencies.
+                            This SnakeGame project is a Java-based remake of Nokia's classic Snake game.
                         </p>
                         <p>
-                            Developed as a personal project, it was an excellent way to practice coding and understand financial calculations and exchange rates.
+                            Developed as a personal project, it was a great opportunity to practice and enhance my coding skills while working on something fun and nostalgic.
                         </p>
                         <div class="d-flex align-items-center">
-                            <img class="w-100 currency-img mx-auto" src="assets/images/converter_screenshot.webp" alt="Currency Screenshot">
+                            <img class="w-100" src="assets/images/snake_ingame.webp" alt="snake">
                         </div>
-                        <p>
-                            Project Highlights:
-                        </p>
+                        <p>Project Highlights:</p>
                         <ul class="mb-3">
                             <li>
-                                Language: Python
+                                Language: Java
                             </li>
                             <li>
-                                Functionality: The application allows users to input an amount in one currency and convert it to another using up-to-date exchange rates.
+                                Custom Sprites: The game retains the general rules and gameplay of the original Snake game but features custom-designed sprites for a unique visual experience.
                             </li>
                             <li>
-                                User Interface: Features a simple and intuitive GUI for easy interaction and smooth user experience, built using Tkinter.
-                            </li>
-                            <li>
-                                Real-time Exchange Rates: Integrates with an API to fetch current exchange rates, ensuring accurate and reliable conversions.
+                                Objective: Guide the snake to eat food, growing longer with each piece consumed, while avoiding collisions with the walls and the snake's own body.
                             </li>
                         </ul>
                         <p>
-                            Creating this project was a rewarding experience, allowing me to apply my Python skills to a practical tool that can be useful in real-world scenarios.
+                            This project was not only enjoyable to create but also a valuable learning experience, solidifying my understanding of Java and game development principles.
                         </p>
                     </div>
-                    <div class="d-flex justify-content-end mt-3">
-                        <a href="https://github.com/shinymcshine09/Currency-Converter" type="button" class="btn btn-primary">Link to Code</a>
-                    </div>
-                </section>
-                <section class="container project shadow border rounded p-5 bg-light">
-                    <h3 class="text-center mb-3 pb-3 border-bottom">
-                        Personal React Website Project
-                    </h3>
-                    <div class="border-bottom mb-4">
-                        <p class="lead">
-                            This Personal Website project is a custom-built website designed to showcase my skills, projects, and experience.
-                        </p>
-                        <p>
-                            Developed from scratch, this project demonstrates my skills in web development and design.
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <img class="w-100" id="website" src="assets/images/react_website.webp" alt="website-img">
-                        </div>
-                        <p>
-                            Project Highlights:
-                        </p>
-                        <ul>
-                            <li>
-                                Technologies Used:
-                                <ul>
-                                    <li>
-                                        HTML/CSS: For structuring and styling the website.
-                                    </li>
-                                    <li>
-                                        JavaScript: For adding interactivity and enhancing the user experience.
-                                    </li>
-                                    <li>
-                                        React: For building reusable UI components and managing the website's dynamic behavior.
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                Features:
-                                <ul>
-                                    <li>
-                                        About Me: A detailed section introducing myself and my background.
-                                    </li>
-                                    <li>
-                                        Projects: A portfolio of my projects, including descriptions and links to GitHub repositories.
-                                    </li>
-                                    <li>
-                                        Contact Form: A functional form allowing visitors to get in touch with me directly through the website.
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                Design: Clean and modern design focused on user experience and readability.
-                            </li>
-                        </ul>
-                        <p>
-                            Developing this website was an exciting and educational experience, allowing me to integrate various web technologies and create a platform to present my work and connect with others.
-                        </p>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                        <a href="https://github.com/shinymcshine09/my-website" type="button" class="btn btn-primary">Link to Code</a>
-                        <a href="old_website.html" type="button" class="btn btn-primary ms-2">About Old Site</a>
-                    </div>
-                </section>
+                <div class="d-flex justify-content-end mt-3">
+                    <a href="https://github.com/shinymcshine09/SnakeGame" type="button" class="btn btn-warning me-2">Link to Code</a>
+                </div>
             </section>
-            <section id="contact-main">
-                <h2 class="text-center m-5">
+            <section id="converter-info" class="shadow project border rounded p-5 bg-light container mb-5 hidden modal">
+                <h3 class="text-center mb-3 pb-3 border-bottom">
+                    Currency Converter Project
+                </h3>
+                <div class="border-bottom mb-4">
+                    <p class="lead">
+                        This Currency Converter project is a Python-based application designed to convert values between different currencies.
+                    </p>
+                    <p>
+                        Developed as a personal project, it was an excellent way to practice coding and understand financial calculations and exchange rates.
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <img class="w-100 currency-img mx-auto" src="assets/images/converter_screenshot.webp" alt="Currency Screenshot">
+                    </div>
+                    <p>
+                        Project Highlights:
+                    </p>
+                    <ul class="mb-3">
+                        <li>
+                            Language: Python
+                        </li>
+                        <li>
+                            Functionality: The application allows users to input an amount in one currency and convert it to another using up-to-date exchange rates.
+                        </li>
+                        <li>
+                            User Interface: Features a simple and intuitive GUI for easy interaction and smooth user experience, built using Tkinter.
+                        </li>
+                        <li>
+                            Real-time Exchange Rates: Integrates with an API to fetch current exchange rates, ensuring accurate and reliable conversions.
+                        </li>
+                    </ul>
+                    <p>
+                        Creating this project was a rewarding experience, allowing me to apply my Python skills to a practical tool that can be useful in real-world scenarios.
+                    </p>
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <a href="https://github.com/shinymcshine09/Currency-Converter" type="button" class="btn btn-warning">Link to Code</a>
+                </div>
+            </section>
+            <section id="react-info" class="container project shadow border rounded p-5 bg-light hidden modal">
+                <h3 class="text-center mb-3 pb-3 border-bottom">
+                    Personal React Website Project
+                </h3>
+                <div class="border-bottom mb-4">
+                    <p class="lead">
+                        This Personal Website project is a custom-built website designed to showcase my skills, projects, and experience.
+                    </p>
+                    <p>
+                        Developed from scratch, this project demonstrates my skills in web development and design.
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <img class="w-100" id="website" src="assets/images/react_website.webp" alt="website-img">
+                    </div>
+                    <p>
+                        Project Highlights:
+                    </p>
+                    <ul>
+                        <li>
+                            Technologies Used:
+                            <ul>
+                                <li>
+                                    HTML/CSS: For structuring and styling the website.
+                                </li>
+                                <li>
+                                    JavaScript: For adding interactivity and enhancing the user experience.
+                                </li>
+                                <li>
+                                    React: For building reusable UI components and managing the website's dynamic behavior.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Features:
+                            <ul>
+                                <li>
+                                    About Me: A detailed section introducing myself and my background.
+                                </li>
+                                <li>
+                                    Projects: A portfolio of my projects, including descriptions and links to GitHub repositories.
+                                </li>
+                                <li>
+                                    Contact Form: A functional form allowing visitors to get in touch with me directly through the website.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Design: Clean and modern design focused on user experience and readability.
+                        </li>
+                    </ul>
+                    <p>
+                        Developing this website was an exciting and educational experience, allowing me to integrate various web technologies and create a platform to present my work and connect with others.
+                    </p>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a href="https://github.com/shinymcshine09/my-website" type="button" class="btn btn-warning">Link to Code</a>
+                    <a href="old_website.html" type="button" class="btn btn-warning ms-2">About Old Site</a>
+                </div>
+            </section>
+            <section id="contact-main" class="container">
+                <h2 class="text-center m-5 fw-bold">
                     Contact me
                 </h2>
-                <div class="container border shadow bg-light p-5 rounded">
-                    <h3 class="text-center m-5 pb-3 border-bottom">
+                <div class="card border shadow">
+                    <div class="card-header">
                         Get in touch
-                    </h3>
+                    </div>
                     <form role="form" id="contact-form">
-                        <div class="form-group row p-4">
+                        <div class="form-group row p-3">
                             <label class="col-sm-2" for="name">Name:</label>
                             <div class="col-sm-10">
                                 <input name="from_name" type="text" class="form-control" id="name" placeholder="Enter your name" autocomplete="name">
                             </div>
                         </div>
-                        <div class="form-group row p-4">
+                        <div class="form-group row p-3">
                             <label class="col-sm-2" for="email">Email address:</label>
                             <div class="col-sm-10">
                                 <input name="user_email" type="email" autocomplete="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                                 <small id="emailHelp" class="form-text text-muted text-right">I will never share your email with anyone.</small>
                             </div>
                         </div>
-                        <div class="form-group row p-4">
+                        <div class="form-group row p-3">
                             <label class="col-sm-2" for="subject">Subject:</label>
                             <div class="col-sm-10">
                                 <input name="subject" type="text" class="form-control" id="subject" placeholder="Enter subject" autocomplete="off">
                             </div>
                         </div>
-                        <div class="form-group row p-4">
+                        <div class="form-group row p-3">
                             <label  class="col-sm-2" for="message">Message:</label>
                             <div class="col-sm-10">
                                 <textarea autocomplete="off" name="message" type="message" rows="6" class="form-control" id="message" placeholder="Enter message"></textarea>
                             </div>
                         </div>
-                        <div class="form-group row p-4">
+                        <div class="form-group row p-3">
                             <div class="col-sm-10 offset-sm-2 d-flex justify-content-end">
-                                <button type="submit" class="btn btn-primary">Send</button>
+                                <button type="submit" class="btn btn-warning">Send</button>
                             </div>
                         </div>
                     </form>
@@ -419,7 +519,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
                                     <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
                                 </svg>
-                                <a href="https://www.linkedin.com/in/james-h-644b0b1bb" >Linkedin</a>
+                                <a href="https://www.linkedin.com/in/james-h-644b0b1bb" >LinkedIn</a>
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">

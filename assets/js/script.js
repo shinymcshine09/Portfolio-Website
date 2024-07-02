@@ -21,45 +21,29 @@ document.addEventListener('click', e => {
     }
 });
 
-const svg = document.getElementById('svg-hamburger');
-const scrollPoint = window.innerHeight;
+const showButtons = document.querySelectorAll('.show-btn');
 
-const lightTheme = document.getElementById('bootstrap-light');
-const darkTheme = document.getElementById('bootstrap-dark');
+showButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        const target = this.getAttribute('data-target');
+        const targetElement = document.getElementById(target);
+        document.getElementById('overlay').classList.remove('hidden');
+        document.getElementById('overlay').classList.add('visible');
+        targetElement.classList.remove('hidden');
+        targetElement.classList.add('visible');
+        document.body.classList.add('modal-open');
+    })
+})
 
-var path = window.location.pathname;
-var page = path.split("/").pop();
-
-function setThemeBasedOnPreference() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        lightTheme.disabled = true;
-        darkTheme.disabled = false;
-        svg.querySelector('path').setAttribute('fill', 'white');
-    } else {
-        lightTheme.disabled = false;
-        darkTheme.disabled = true;
-        if (window.scrollY > scrollPoint || page !== 'index.html') {
-            svg.querySelector('path').setAttribute('fill', 'black');
-        }
-    }
-}
-
-// Initial theme setup
-setThemeBasedOnPreference();
-
-// Listen for changes in the system's color scheme preference
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setThemeBasedOnPreference);
-
-window.addEventListener('scroll', function() {
-    if (window.scrollY > scrollPoint && (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)) {
-        svg.querySelector('path').setAttribute('fill', 'black');
-    }
-    else if (window.scrollY < scrollPoint && (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) &&  page !== 'index.html' ) {
-        svg.querySelector('path').setAttribute('fill', 'black');
-    } 
-    else {
-        svg.querySelector('path').setAttribute('fill', 'white');
-    }
+// Event listener for overlay
+document.getElementById('overlay').addEventListener('click', function() {
+    document.querySelectorAll('.modal.visible').forEach(modal => {
+        modal.classList.remove('visible');
+        modal.classList.add('hidden');
+    });
+    document.getElementById('overlay').classList.remove('visible');
+    document.getElementById('overlay').classList.add('hidden');
+    document.body.classList.remove('modal-open');
 });
 
 (function() {
@@ -81,4 +65,4 @@ window.onload = function() {
                 console.log('FAILED...', error);
             });
     });
-}
+};
