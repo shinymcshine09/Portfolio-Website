@@ -187,6 +187,13 @@ footer {
     }
 }
 
+@media only screen and (max-width: 432px) {
+    #last-about-link {
+        margin-top: 1rem;
+        /* margin-left: 0; */
+    }
+}
+
 @media only screen and (max-width: 788px) {
     .modal {
         max-width: calc(100% - 20px);
