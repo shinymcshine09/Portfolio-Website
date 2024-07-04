@@ -37,7 +37,6 @@ body.modal-open {
     top: .5rem;
     z-index: 99;
     background-color: transparent;
-    animation: fade-in-animation 2s linear;
 }
 
 nav {
