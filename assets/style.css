@@ -67,21 +67,12 @@ nav {
     animation: fade-in-animation 2s linear;
 }
 
-#bg-video-container {
-    width: 100%;
-    z-index: -1;
-}
-
-#bg-video {
-    position: absolute;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
 #home-titles {
     font-family: "Open Sans", sans-serif;
+}
+
+#intro-title, #title-sub-text, #welcome-title {
+    font-family: "EB Garamond", serif;
 }
 
 #sub-titles {
