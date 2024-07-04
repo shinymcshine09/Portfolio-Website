@@ -101,14 +101,6 @@ nav {
     margin-bottom: 5rem;
 }
 
-#about-main p {
-    line-height: 2rem;
-}
-
-#about-main li {
-    line-height: 2rem;
-}
-
 /* Portfolio page styles. */
 #portfolio-main {
     max-width: 768px;
