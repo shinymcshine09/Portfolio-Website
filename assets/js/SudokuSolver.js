@@ -1,6 +1,3 @@
-const currentYear = new Date().getFullYear();
-document.getElementById("year").textContent = `© ${currentYear}`;
-
 /**
  * Creates and solves a sudoku board on the html page.
  * @return {void} Do not return anything, modify board in-place instead.
