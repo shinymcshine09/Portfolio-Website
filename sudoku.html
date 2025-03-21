@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sudoku Solver</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link id="bootstrap-light" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link id="bootstrap-dark" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-night.min.css" rel="stylesheet" crossorigin="anonymous" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="assets/sudoku.css">
+        <link rel="stylesheet" href="assets/style.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+        </style>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+        </style>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+        </style>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    </head>
+    <body>
+        <button class="btn" id="hamburger">
+            <svg xmlns="http://www.w3.org/2000/svg" id="svg-hamburger" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                </svg>
+        </button>
+        <section>
+            <nav id="navbar" class="hide">
+                <button id="cross" class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                      </svg>
+                </button>
+                <ul class="nav nav-underline flex-column justify-content-center align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link mb-4 fs-5 text-black" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mb-4 fs-5 text-black" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mb-4 fs-5 text-black" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mb-4 fs-5 text-black" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        <h1 class="text-center m-5">Sudoku Solver</h1>
+        <div id="error-message" class="d-none position-fixed top-50 start-50 translate-middle bg-danger text-white p-3 border border-light rounded text-center" style="max-width: 300px;">
+            <p class="mb-2">Not a valid board</p>
+            <button id="ok-button" class="btn btn-light btn-sm">OK</button>
+        </div>
+        <form onsubmit="solveSudoku(event)" class="container">
+            <div class="row">
+                <div class="col border border-secondary">
+                    <div class="row">
+                        <input class="border col" id="cell-0-0" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-0-1" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-0-2" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-1-0" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-1-1" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-1-2" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-2-0" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-2-1" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-2-2" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                </div>
+                <div class="col border border-secondary">
+                    <div class="row">
+                        <input class="border col" id="cell-0-3" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-0-4" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-0-5" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-1-3" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-1-4" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-1-5" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-2-3" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-2-4" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-2-5" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                </div>
+                <div class="col border border-secondary">
+                    <div class="row">
+                        <input class="border col" id="cell-0-6" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-0-7" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-0-8" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-1-6" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-1-7" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-1-8" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-2-6" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-2-7" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-2-8" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col border border-secondary">
+                    <div class="row">
+                        <input class="border col" id="cell-3-0" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-3-1" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-3-2" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-4-0" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-4-1" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-4-2" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-5-0" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-5-1" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-5-2" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                </div>
+                <div class="col border border-secondary">
+                    <div class="row">
+                        <input class="border col" id="cell-3-3" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-3-4" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-3-5" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-4-3" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-4-4" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-4-5" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-5-3" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-5-4" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-5-5" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                </div>
+                <div class="col border border-secondary">
+                    <div class="row">
+                        <input class="border col" id="cell-3-6" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-3-7" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-3-8" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-4-6" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-4-7" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-4-8" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-5-6" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-5-7" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-5-8" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col border border-secondary">
+                    <div class="row">
+                        <input class="border col" id="cell-6-0" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-6-1" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-6-2" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-7-0" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-7-1" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-7-2" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-8-0" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-8-1" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-8-2" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                </div>
+                <div class="col border border-secondary">
+                    <div class="row">
+                        <input class="border col" id="cell-6-3" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-6-4" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-6-5" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-7-3" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-7-4" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-7-5" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-8-3" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-8-4" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-8-5" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                </div>
+                <div class="col border border-secondary">
+                    <div class="row">
+                        <input class="border col" id="cell-6-6" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-6-7" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-6-8" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-7-6" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-7-7" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-7-8" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                    <div class="row">
+                        <input class="border col" id="cell-8-6" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-8-7" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                        <input class="border col" id="cell-8-8" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 mb-5">
+                <button class="btn btn-warning me-2" type="submit">Solve</button>
+                <button class="btn btn-warning" type="reset" onclick="clearBoard()">Clear</button>
+            </div>
+        </form>
+        <footer class="bg-light py-4 w-100 border-top m-0">
+            <div id="footer-container" class="container mx-auto">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h5>Contact</h5>
+                        <ul class="list-unstyled">
+                            <li>Email: <a href="mailto:js.hart@hotmail.com">js.hart@hotmail.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <h5>Sitemap</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+                                  </svg>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-code-fill" viewBox="0 0 16 16">
+                                    <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M6.646 5.646a.5.5 0 1 1 .708.708L5.707 8l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708zm2.708 0 2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 8 8.646 6.354a.5.5 0 1 1 .708-.708"/>
+                                  </svg>
+                                <a href="portfolio.html">Portfolio</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                  </svg>
+                                <a href="about.html">About</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+                                  </svg>
+                                <a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <h5>Follow Me</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                                </svg>
+                                <a href="https://www.linkedin.com/in/james-h-644b0b1bb" >LinkedIn</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                                </svg>
+                                <a href="https://github.com/shinymcshine09">GitHub</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-3 d-flex">
+                    <p id="year"></p>
+                    <p>&nbsp;James Hart. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <script src="assets/js/SudokuSolver.js"></script>
+    </body>
+    
+</html>
